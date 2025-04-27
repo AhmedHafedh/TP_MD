@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gestion des patients</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Liste des patients</h1>
+    <a href="/ajouter" class="btn btn-primary mb-3">Ajouter</a>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <td>Nom</td><td>Prénom</td><td>Naissance</td><td>Adresse</td><td>Téléphone</td><td>Email</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p : ${patients}">
+            <td th:text="${p.nom}"></td>
+            <td th:text="${p.prenom}"></td>
+            <td th:text="${p.dateNaissance}"></td>
+            <td th:text="${p.adresse}"></td>
+            <td th:text="${p.telephone}"></td>
+            <td th:text="${p.email}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="/js/bootstrap.bundle.min.js"/>
+</body>
+</html>

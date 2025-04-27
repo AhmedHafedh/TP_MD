@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Ajouter un patient</h1>
+    <form th:action="@{/save}" th:object="${patient}" method="post">
+     <input type="hidden" th:field="*{id}">
+        <div class="mb-3">
+            <label>Nom :</label>
+            <input type="text" th:field="*{nom}" class="form-control-sm" required>
+        </div>
+        <div class="mb-3">
+            <label>Prénom</label>
+            <input type="text" th:field="*{prenom}" class="form-control-sm" required>
+        </div>
+        <div class="mb-3">
+            <label>Date de Naissance</label>
+            <input type="date" th:field="*{dateNaissance}" class="form-control-sm" required>
+        </div>
+        <div class="mb-3">
+            <label>Adresse</label>
+            <input type="text" th:field="*{adresse}" class="form-control-sm" required>
+        </div>
+        <div class="mb-3">
+            <label>Téléphone</label>
+            <input type="text" th:field="*{telephone}" class="form-control-sm" required>
+        </div>
+        <div class="mb-3">
+            <label>Email</label>
+            <input type="email" th:field="*{email}" class="form-control-sm" required>
+        </div>
+        <button class="btn btn-success">Enregistrer</button>
+
+    </form>
+</div>
+
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
